@@ -1,19 +1,25 @@
 #ifndef METEORO_HPP
 #define METEORO_HPP
 
-#include "ASCII_Engine\ObjetoDeJogo.hpp"
+#include "ASCII_Engine/ObjetoDeJogo.hpp"  
+#include "Handler.hpp"            
+#include "inimigo.hpp"                    
 
-class Meteoro : public ObjetoDeJogo
-{
+
+class Meteoro : public ObjetoDeJogo{
 public:
-	Meteoro(const ObjetoDeJogo &obj, int dano = 50) : ObjetoDeJogo(obj) {}
-	virtual ~Meteoro()	{}
-	
-     int getDano() const { return dano; }
 
+	Meteoro(const ObjetoDeJogo &obj, int dano = 50)
+		: ObjetoDeJogo(obj), dano(dano) {}
+
+    int getDano() const { return dano; }
+	bool verificarForaDaTela();
+
+	int atacar();
+	
 private:
-	bool open;
-    int dano;
+    int dano;  
+	int life;
 };
 
 #endif

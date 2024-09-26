@@ -27,7 +27,7 @@ private:
     std::list<Projetil*> projeteisAtivos;
 
     // Métodos auxiliares com tipo de retorno bool explicitamente declarado
-    bool foraDaTela(Projetil* projetil);
+    virtual bool foraDaTela(Projetil* projetil);
 };
 
 #endif
