@@ -150,7 +150,7 @@ unsigned FaseLevel2::run(SpriteBuffer &screen)
                 update();
             }
             if(MeteorosApagados == 19){
-                 return Fase::END_FASE;
+                return Fase::END_FASE;
             }    
 
     }
