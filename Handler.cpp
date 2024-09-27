@@ -7,14 +7,13 @@ void ProjetilHandler::adicionarProjetil(Projetil* projetil) {
 void ProjetilHandler::removerProjetil(Projetil* projetil) {
     projetil->desativarObj();
     projeteisAtivos.remove(projetil);
-    delete projetil; // liberar a memória!
+    delete projetil; 
 }
 
 void ProjetilHandler::atualizarProjeteis() {
     for (auto it = projeteisAtivos.begin(); it != projeteisAtivos.end(); ) {
         (*it)->update();
 
-        // Verificar se o projétil saiu da tela ou atingiu seu tempo de vida (se aplicável)
         if (foraDaTela(*it)) {
             it = projeteisAtivos.erase(it); 
         } else {

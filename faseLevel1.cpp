@@ -19,35 +19,35 @@ void FaseLevel1::init()
     aliens.push_back(new Enemy(ObjetoDeJogo("Enemy1", Sprite("rsc/inimigo.img"), 5, 20)));
     objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy2", Sprite("rsc/inimigo.img"), 5, 40)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy2", Sprite("rsc/inimigo.img"), 5, 40)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy3", Sprite("rsc/inimigo.img"), 5, 60)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy3", Sprite("rsc/inimigo.img"), 5, 60)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy4", Sprite("rsc/inimigo.img"), 5, 80)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy4", Sprite("rsc/inimigo.img"), 5, 80)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy5", Sprite("rsc/inimigo.img"), 5, 100)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy5", Sprite("rsc/inimigo.img"), 5, 100)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy6", Sprite("rsc/inimigo.img"), 5, 120)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy6", Sprite("rsc/inimigo.img"), 5, 120)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy7", Sprite("rsc/inimigo.img"), 5, 140)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy7", Sprite("rsc/inimigo.img"), 5, 140)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy8", Sprite("rsc/inimigo.img"), 5, 160)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy8", Sprite("rsc/inimigo.img"), 5, 160)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy10", Sprite("rsc/inimigo.img"), 5, 180)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy10", Sprite("rsc/inimigo.img"), 5, 180)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy11", Sprite("rsc/inimigo.img"), 5, 200)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy11", Sprite("rsc/inimigo.img"), 5, 200)));
+    objs.push_back(aliens.back());
 
-    // aliens.push_back(new Enemy(ObjetoDeJogo("Enemy12", Sprite("rsc/inimigo.img"), 5, 220)));
-    // objs.push_back(aliens.back());
+    aliens.push_back(new Enemy(ObjetoDeJogo("Enemy12", Sprite("rsc/inimigo.img"), 5, 220)));
+    objs.push_back(aliens.back());
 
     objs.push_back(player);
 
@@ -151,7 +151,7 @@ unsigned FaseLevel1::run(SpriteBuffer &screen)
             {
                 ++itProjeteis;
             }
-        }
+         }
 
         //player colidiu com um inimigo?
         for (auto alien : aliens)
@@ -187,7 +187,7 @@ unsigned FaseLevel1::run(SpriteBuffer &screen)
             }
         }
 
-        if ((inimigosMortos/2) == 1)
+        if ((inimigosMortos/2) == 12)
         {
             return Fase::END_FASE;
         }

@@ -11,6 +11,8 @@ public:
 
 	Meteoro(const ObjetoDeJogo &obj, int dano = 50)
 		: ObjetoDeJogo(obj), dano(dano) {}
+	
+	int posL = getPosL();
 
     int getDano() const { return dano; }
 	bool verificarForaDaTela();

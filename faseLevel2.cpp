@@ -8,10 +8,11 @@
 
 void FaseLevel2::init()
 {
-    //  Criando os objetos de jogo
-    
+    MeteorosApagados = 0;  // Inicializando o contador de meteoros apagados
+
+    // Criando os objetos de jogo
     player = new Player(ObjetoDeJogo("Player", Sprite("rsc/nave.img"), 66, 103));
- 
+
     meteoros.push_back(new Meteoro(ObjetoDeJogo("Meteoro1", Sprite("rsc/meteoro.img"), -10, 50)));
     objs.push_back(meteoros.back());
 
@@ -69,7 +70,6 @@ void FaseLevel2::init()
     meteoros.push_back(new Meteoro(ObjetoDeJogo("Meteoro19", Sprite("rsc/meteoro.img"), -20, 200)));
     objs.push_back(meteoros.back());
 
-
     objs.push_back(player);
     objs.push_back(new ObjetoDeJogo("HUD", Sprite("rsc/HUD_cima.img"), 0, 0));
 
@@ -103,11 +103,9 @@ unsigned FaseLevel2::run(SpriteBuffer &screen)
     {
         // Lendo entrada
         ent = _getch();
-
         // Processamento de entrada
         int posL = player->getPosL(), posC = player->getPosC();
 
-        // Movimentação do jogador
         if (ent == 'a' && player->getPosC() > 12)
         {
             player->moveLeft(3);
@@ -118,15 +116,20 @@ unsigned FaseLevel2::run(SpriteBuffer &screen)
         }
         else if (ent == 'q')
         {
-            return Fase::QUIT_GAME; // Encerra o jogo
+            return Fase::QUIT_GAME; 
         }
-        for(auto meteoro : meteoros){
-            meteoro ->moveDown(2);
-            meteoro ->verificarForaDaTela();
-            if(meteoro->verificarForaDaTela()){
-                MeteorosApagados ++;
-            }
+        else if (ent == 'f')
+        {
+            return Fase::END_FASE; 
         }
+
+        // Movimentação dos meteoros
+        for (auto meteoro : meteoros)
+        {
+            meteoro->moveDown(2);
+        }
+
+
         for (auto meteoro : meteoros)
         {
             if (player->colideCom(*meteoro))
@@ -145,19 +148,16 @@ unsigned FaseLevel2::run(SpriteBuffer &screen)
                     show(screen);
                     return Fase::GAME_OVER;
                 }
-
+            }
                 life->setText(std::string(player->getLife() / 5, '#'));
                 update();
             }
-            if(MeteorosApagados == 19){
-                return Fase::END_FASE;
-            }    
 
-    }
-    screen.clear();
-    update();
-    draw(screen);
-    system("cls");
-    show(screen);
+
+        screen.clear();
+        update();
+        draw(screen);
+        system("cls");
+        show(screen);
     }
 }

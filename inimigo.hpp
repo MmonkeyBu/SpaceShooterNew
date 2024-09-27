@@ -15,7 +15,7 @@ public:
 
     void sofrerAtaque(int ataque);
 
-    int atacar();
+    virtual int atacar();
 
     bool getDirecao() const;
 
@@ -23,10 +23,9 @@ public:
 
     bool dropPowerUp() const;
 
-    // Declaração do método update()
     void update() override;
 
-private:
+protected:
     int life;
     int velAtaque, contAtaque;
     bool direcao; // true para baixo, false para cima

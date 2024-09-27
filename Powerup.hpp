@@ -26,7 +26,7 @@ public:
 
     // Implementação do efeito do escudo
     void aplicarEfeito(Player& Player) const override {
-        // Lógica para ativar o escudo no herói (por exemplo, reduzir o dano recebido por um tempo)
+        // Lógica para ativar o escudo 
     }
 };
 

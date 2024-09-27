@@ -33,11 +33,6 @@ public:
     // Desativa o powerup após um certo uso (se for temporário)
     void desativarPowerup() { powerup = false; }
 
-    // void verificarColisaoComMeteoro(const Meteoro &meteoro) {
-    //     if (colideCom(meteoro)) {
-    //         sofrerAtaque(meteoro.getDano());
-    //     }
-    // }
 
 private:
     int life;

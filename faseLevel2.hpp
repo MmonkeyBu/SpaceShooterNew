@@ -21,7 +21,7 @@ private:
     Player *player;
     TextSprite *life;
     std::list<ObjetoDeJogo*> colisoes;
-    std::vector<Meteoro*> meteoros;
+    std::list<Meteoro*> meteoros;
     int MeteorosApagados;
 };
 

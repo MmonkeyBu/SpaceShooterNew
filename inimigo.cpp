@@ -28,14 +28,12 @@ void Enemy::setDirecao(bool novaDirecao) {
 }
 
 bool Enemy::dropPowerUp() const {
-    // Gera um número aleatório entre 0 e 99
+
     int numeroAleatorio = rand() % 100;
 
-    // Retorna true se o número for menor que 25 (25% de chance)
     return numeroAleatorio < 25;
 }
 
-// Implementação do método update()
 void Enemy::update() {
     if (direcao) { // Movendo para baixo
         setPosL(getPosL() + 1);
